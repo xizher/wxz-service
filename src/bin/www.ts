@@ -13,8 +13,7 @@ const server = http.createServer(app.callback())
     const bind = typeof port === 'string'
       ? 'Pipe ' + port
       : 'Port ' + port
-    /* eslint-disable */
-    switch ((e as any).code) {
+    switch ((e as any).code) { // eslint-disable-line
       case 'EACCES':
         console.error(bind + ' requires elevated privileges')
         process.exit(1)
@@ -26,7 +25,6 @@ const server = http.createServer(app.callback())
       default:
         throw e
     }
-    /* eslint-enable */
   })
   .on('listening', () => {
     const addr = server.address()

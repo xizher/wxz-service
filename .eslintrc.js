@@ -5,9 +5,16 @@ module.exports = { // eslint-disable-line
   ],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
   rules: {
+
+    // TO FIX -> ESLint: Cannot read property 'loc' of undefined.
+    "indent": 'off',
+    "@typescript-eslint/indent": ["error", 2, {
+      "SwitchCase": 1
+    }],
+    // --END
 
     // 行末不用分号
     'semi':
@@ -68,10 +75,6 @@ module.exports = { // eslint-disable-line
     // 文件末尾存在空行
     'eol-last':
       ['error', 'always'],
-
-    // 缩进 2
-    'indent':
-      ['error', 2],
 
     // 关键字之前至少有一个空格，关键字之后至少有一个空格
     'keyword-spacing':
